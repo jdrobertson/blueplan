@@ -14,10 +14,11 @@ ActiveRecord::Schema.define(version: 20161220224123) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
-    t.time     "time"
-    t.date     "date"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
     t.text     "description"
-    t.integer  "details_id"
+    t.integer  "location_id"
+    t.integer  "timeslot_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
