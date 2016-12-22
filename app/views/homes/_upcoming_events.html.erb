@@ -1,0 +1,27 @@
+<h2>Upcoming events for <%= org_name %></h2>
+<table>
+  <tr>
+    <th>Event Name</th>
+    <th>Date</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+  </tr>
+
+  <% @events.each do |event| %>
+    <tr>
+      <td>
+        <%= event.name %>
+      </td>
+      <td>
+        <%= event.starts_at.strftime("%a %d %b, %Y") %>
+      </td>
+      <td>
+        <%= event.starts_at.strftime("%I:%M %p")%>
+      </td>
+      <td>
+        <%= event.ends_at.strftime("%I:%M %p")%>
+      </td>
+      <td><%= link_to "View Details", event %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,21 @@
+<h2>New Songs for <%= org_name %></h2>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Artist</th>
+  </tr>
+
+  <% @songs.each do |song| %>
+    <tr>
+      <td>
+        <%= song.title %>
+      </td>
+      <td>
+        <%= song.artist %>
+      </td>
+      <td>
+        <%= link_to "Details", song %>
+      </td>
+    </tr>
+  <% end %>
+</table>
