@@ -1,0 +1,26 @@
+<% unless @event.songs.empty? %>
+  <table>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Artist</th>
+    </tr>
+
+    <% @event.songs.each_with_index do |song, index| %>
+      <tr>
+        <td><%= index %>
+        <td>
+          <%= song.title %>
+        </td>
+        <td>
+          <%= song.artist %>
+        </td>
+        <td>
+          <%= link_to "Details", song %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  <p>There are no songs currently scheduled for this event</p>
+<% end %>

@@ -1,0 +1,28 @@
+<h2><%= @event.name %> on <%= @event.start_date_short  %></h2>
+
+<table>
+  <tr>
+    <th>starts: </th>
+    <td><%= @event.start_time %></td>
+    <td><%= @event.start_date %></td>
+  </tr>
+  <tr>
+    <th>ends: </th>
+    <td><%= @event.end_time %></td>
+    <td>
+      <% unless @event.start_date == @event.end_date %>
+        <%= @event.end_date %>
+      <% end %>
+    </td>
+  </tr>
+</table>
+
+<p>
+ <%= @event.description %>
+</p>
+
+<h3>Songs for service</h3>
+<%= render 'event_songs_table' %>
+<p>
+  <%= button_to 'Delete', event_path(@event), method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>
