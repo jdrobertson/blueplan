@@ -1,5 +1,7 @@
-<h2>Upcoming events for <%= org_name %></h2>
+<h2>Events for <%= org_name %></h2>
 <%= render 'shared/events_table' %>
+<%= link_to 'New Event', new_event_path, :class => "btn btn-default" %>
 
-<h2>New Songs for <%= org_name %></h2>
+<h2>Songs for <%= org_name %></h2>
 <%= render 'shared/songs_table' %>
+<%= link_to 'New Song', new_song_path, :class => "btn btn-default" %>

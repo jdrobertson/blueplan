@@ -1,5 +1,5 @@
 class EventPresenter
-  delegate :name, :description, :songs, :id,  to: :@event
+  delegate :name, :description, :songs, :id, :scheduled_songs, :to_param, :model_name, :to_key, :to_model, to: :@event
 
   def initialize(event)
     @event = event

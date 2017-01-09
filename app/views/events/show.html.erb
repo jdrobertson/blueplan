@@ -1,6 +1,6 @@
 <h2><%= @event.name %> on <%= @event.start_date_short  %></h2>
 
-<table>
+<table class="table table-hover">
   <tr>
     <th>starts: </th>
     <td><%= @event.start_time %></td>
@@ -21,8 +21,18 @@
  <%= @event.description %>
 </p>
 
-<h3>Songs for service</h3>
+<h3>Songs for event</h3>
 <%= render 'event_songs_table' %>
+
+<h5>Select song from drop down to add to event</h5>
 <p>
-  <%= button_to 'Delete', event_path(@event), method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= form_for [@event, @event.scheduled_songs.new] do |f| %>
+  <%= f.select(:song_id, options_from_collection_for_select(Song.all, :id, :title)) %>
+  <%= f.submit "Add Song" %>
+<% end %>
 </p>
+
+<p>
+<%= button_to 'Delete Event', event_path(@event), method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>
+

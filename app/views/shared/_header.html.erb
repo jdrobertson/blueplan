@@ -1,1 +1,15 @@
-<h1><%= link_to site_name, home_path %></h1>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <%= link_to site_name, home_path, class: "navbar-brand"%>
+    </div>
+    <ul class="nav navbar-nav">
+      <li>
+        <%= link_to "Events", events_path%>
+      </li>
+      <li>
+        <%= link_to "Songs", events_path%>
+      </li>
+    </ul>
+  </div>
+</nav>
