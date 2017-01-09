@@ -4,10 +4,10 @@
       <%= link_to site_name, home_path, class: "navbar-brand"%>
     </div>
     <ul class="nav navbar-nav">
-      <li>
+      <li <%= ('class=active' if controller.controller_name == "events") %>>
         <%= link_to "Events", events_path%>
       </li>
-      <li>
+      <li <%= ('class=active"' if controller.controller_name == "songs") %>>
         <%= link_to "Songs", events_path%>
       </li>
     </ul>
