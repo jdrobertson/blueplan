@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Event, type: :model do
-  let(:normal_event) { Event.new(name: "NormalEvent", starts_at: DateTime.new(2001, 02, 03, 04, 05, 06), ends_at: DateTime.new(2001, 02, 03, 07, 05, 06)) }
+  let(:valid_event) { Event.new(name: "NormalEvent", starts_at: DateTime.new(2001, 02, 03, 04, 05, 06), ends_at: DateTime.new(2001, 02, 03, 07, 05, 06)) }
   let(:nameless_event) { Event.new(starts_at: DateTime.new, ends_at: DateTime.new) }
   let(:startless_event) { Event.new(name: "StartlessEvent", ends_at: DateTime.new) }
   let(:endless_event) { Event.new(name: "EndlessEvent", starts_at: DateTime.new) }
@@ -9,7 +9,7 @@ RSpec.describe Event, type: :model do
 
   describe "validations" do
     it "it valid with valid attributes" do
-      expect(normal_event).to be_valid
+      expect(valid_event).to be_valid
     end
 
     it "is not valid without a name" do
@@ -37,7 +37,7 @@ RSpec.describe Event, type: :model do
     end
 
     it "returns false when event does not start at the beginning of a day and end at end of a day" do
-      expect(normal_event).to_not be_all_day
+      expect(valid_event).to_not be_all_day
     end
   end
 end
