@@ -1,7 +1,7 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-fixed-top navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <%= link_to site_name, home_path, class: "navbar-brand"%>
+      <%= link_to site_name.upcase, home_path, class: "navbar-brand" %>
     </div>
     <ul class="nav navbar-nav">
       <li <%= ('class=active' if controller.controller_name == "events") %>>
