@@ -1,14 +1,17 @@
 <nav class="navbar navbar-fixed-top navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <%= link_to site_name.upcase, home_path, class: "navbar-brand" %>
+      <%= link_to site_name, home_path, class: "navbar-brand", id: "logo" %>
     </div>
-    <ul class="nav navbar-nav">
+    <ul class="nav navbar-nav navbar-right">
       <li <%= ('class=active' if controller.controller_name == "events") %>>
         <%= link_to "Events", events_path%>
       </li>
       <li <%= ('class=active"' if controller.controller_name == "songs") %>>
         <%= link_to "Songs", events_path%>
+      </li>
+      <li>
+        <%= link_to "Log In" %>
       </li>
     </ul>
   </div>
