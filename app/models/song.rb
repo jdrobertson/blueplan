@@ -6,5 +6,5 @@ class Song < ApplicationRecord
   validates :path, presence: true
 
   has_many :scheduled_songs
-  has_many :events, through: :appointments
+  has_many :events, through: :scheduled_songs
 end

@@ -7,6 +7,10 @@ class Event < ApplicationRecord
   has_many :scheduled_songs
   has_many :songs, through: :scheduled_songs
 
+  has_many :event_roles
+  has_many :roles, through: :event_roles
+  has_many :users, through: :roles
+
   def all_day?
     starts_at.to_i == starts_at.beginning_of_day.to_i && ends_at.to_i == ends_at.end_of_day.to_i
   end
